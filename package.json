@@ -1,0 +1,30 @@
+{
+  "name": "experiment.typescript-service",
+  "version": "1.0.0",
+  "description": "An experiment in how to create a service in typescript that makes use of the library experiment.",
+  "main": "./bin/index.js",
+  "files": ["bin/**/*"],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelsummerfield/experiment.typescript-service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joelsummerfield/experiment.typescript-service/issues"
+  },
+  "homepage": "https://github.com/joelsummerfield/experiment.typescript-service#readme",
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
+  }
+}
