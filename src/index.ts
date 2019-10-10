@@ -1,4 +1,4 @@
-import { Add, Divide, Multiply, Subtract } from 'experiment.typescript-library';
+import { Add, Divide, Multiply, Subtract } from '@joelsummerfield/experiment.typescript-library';
 
 function printMessage(message : string) : void
 {

@@ -2,10 +2,11 @@
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
+        "moduleResolution": "node",
         "declaration": true,
-        "outDir": "./bin",
+        "outDir": "./dist/bin",
         "strict": true
     },
     "include": ["src"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "src/**/*.test.ts"]
   }

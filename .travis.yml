@@ -1,0 +1,22 @@
+sudo: false
+
+language: node_js
+node_js:
+  - "lts/*"
+
+install:
+  - npm install
+
+script:
+  - npm run lint
+  - npm run build
+  - npm run test
+
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
+  on:
+    branch: master
+    tags: true
