@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.0...v1.2.1) (2019-10-14)
+
+
+### Bug Fixes
+
+* package incorrectly scoped ([c8851c5](https://github.com/joelsummerfield/experiment.typescript-service/commit/c8851c5f89e368def62e7fd4d9322f5119e463d9))
+
 ## 1.2.0 (2019-10-14)
 
 
