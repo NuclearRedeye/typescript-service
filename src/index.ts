@@ -1,6 +1,6 @@
 import { Add, Divide, Multiply, Subtract } from '@joelsummerfield/experiment.typescript-library';
 import bodyParser = require('body-parser');
-import { Request, Response, Application } from 'express';
+import { Application, Request, Response } from 'express';
 import express = require('express');
 
 const app: Application = express();
