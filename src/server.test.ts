@@ -1,15 +1,15 @@
-const request = require('supertest')
+import * as request from 'supertest';
 import * as server from './server';
 
 describe('Post /add', () => {
     it('2 + 2 should be equal to 4', async () => {
-        const res = await request(server.app)
+        const res: request.Response = await request(server.app)
             .post('/add')
             .send({
                 a: 2,
                 b: 2,
             });
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(4);
     });
@@ -18,7 +18,7 @@ describe('Post /add', () => {
       const res = await request(server.app)
           .post('/add')
           .send({});
-      expect(res.statusCode).toEqual(200);
+      expect(res.status).toEqual(200);
       expect(res.body).toHaveProperty('result');
       expect(res.body.result).toEqual(0);
     });
@@ -32,7 +32,7 @@ describe('Post /subtract', () => {
                 a: 5,
                 b: 4,
             });
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(1);
     });
@@ -41,7 +41,7 @@ describe('Post /subtract', () => {
         const res = await request(server.app)
             .post('/subtract')
             .send({});
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(0);
     });
@@ -55,7 +55,7 @@ describe('Post /mulitply', () => {
                 a: 11,
                 b: 3,
             });
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(33);
     });
@@ -64,7 +64,7 @@ describe('Post /mulitply', () => {
         const res = await request(server.app)
             .post('/multiply')
             .send({});
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(0);
     });
@@ -78,7 +78,7 @@ describe('Post /divide', () => {
                 a: 20,
                 b: 2,
             });
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(10);
     });
@@ -87,7 +87,7 @@ describe('Post /divide', () => {
         const res = await request(server.app)
             .post('/divide')
             .send({});
-        expect(res.statusCode).toEqual(200);
+        expect(res.status).toEqual(200);
         expect(res.body).toHaveProperty('result');
         expect(res.body.result).toEqual(0);
     });
