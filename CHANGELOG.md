@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.1...v1.2.2) (2019-10-14)
+
+
+### Bug Fixes
+
+* linter warnings in tests ([10705b3](https://github.com/joelsummerfield/experiment.typescript-service/commit/10705b31c0795ba54803432bb57fd883a38c3cc3))
+
 ### [1.2.1](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.0...v1.2.1) (2019-10-14)
 
 
