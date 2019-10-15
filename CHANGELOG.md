@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.5](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.4...v1.2.5) (2019-10-15)
+
+
+### Bug Fixes
+
+* add missing makefile ([cf78f3f](https://github.com/joelsummerfield/experiment.typescript-service/commit/cf78f3f66e22447e6c29501b1ee3b015be160e8b))
+
 ### [1.2.4](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.3...v1.2.4) (2019-10-15)
 
 ### [1.2.3](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.2...v1.2.3) (2019-10-15)
