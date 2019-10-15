@@ -13,14 +13,15 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: docker --version && echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME"
-    --password-stdin && docker build -t joelsummerfield/experiment.typescript-service
-    . && docker tag joelsummerfield/experiment.typescript-service joelsummerfield/experiment.typescript-service:${TRAVIS_TAG#?}
-    && docker push joelsummerfield/experiment.typescript-service
+  script: >-
+    echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin &&
+    docker build -t joelsummerfield/experiment.typescript-service . &&
+    docker tag joelsummerfield/experiment.typescript-service joelsummerfield/experiment.typescript-service:${TRAVIS_TAG#?} &&
+    docker push joelsummerfield/experiment.typescript-service
   on:
     branch: master
     tags: true
 env:
   global:
   - secure: Glde9dMNl7S1Vyw0pNQEKnhnxbkElGlV70ffLNAoK0HtoSlbwfgPyOJ+DyPYk3m9baQq6PqlRBS7BR/74+MN43RJd7+GrJmm/fuzge40y+RWt/7w8hmJ59BMg06I73QY6DXWfJNLxeFE994YX+aNM8ZKXgyKxEyPVF12vrhIa7Q3lTefPH2FifIfTsaewrbFhJGg36IW/2nTQ5JVNMJkme/+viBeyfApQGaLXRRaYzzU9NxeJ+kUuCD30RCJVYKs22nQPUgZttV+83Eigqm5yHQ9C3khPgnAM9ZOaBP0G0Ekkb9EuSqSHolCDSWwiEXcIxg39bp2zhRTAWc1tEMS/bo+0Nwu9zcG/U74Mi6smO2gSSPPSoY4/W5TQWa2/BE+ZXFBkPOjFKCUhjn2U5AsI4yHBUaiHeT5IOZtuVaJcPB8ReAoDHzS8wTCTC9qySUyGg82xx5qny8eFG/daTK2LnqaARN2ckz3/LTmH9FXk2jdFC+6jTx28tHgZ2GEUu9TjyBs1ejKpPfeyhHuoaE9F3MWFqEZqdvbTekJhtwD61x3SBji2JNrvSc9e0aiNpLy7HlyynLFgmr6niYx94s3O//ixPtEv/Oht2072V4qXxxBW7fSsGzpaeL9y7llKB2U7xTcgCFX/rRVyiQ4bK+MXMMccG+Vy6beT79RZuA67F0=
-  - secure: FMSSryMDE7O2n2oRVhT4fG1in8lZ/Ss1qw2wvgBrd6TmjR48y4Av0IlJN9NvCSdrKVS3mare7fNP/73r50/9xVgf8LBdXyJZHi37++8ljBA7m7fJUD6PhtqlMTkawRfahrn/lt+NSozAOyBjG3wKNEKw+puv5qqJkPjfjrJZtmJzQ9uafTxSJi08F2VBT5PuGC22h0LO87r+0NDmcosk9m2N31T/kAeEnI1GxsBJz7cKmC8Zf47qciFEvnEfZKJC6bhQtTTkv/PFTCGhpI0X72YQ4kV3JxZEcwdY/jQtf5YM2UcN3ox7D7c/f6+mUEc7DPZjO6WbS7u4UGEI9mnbwab35Qwl2G5xANVKEcMf7cYUPiMoVUiLMdGqmKaOc7/i6RlSrgTmA9Vi+58pF6N2+kNmjf4d7wkMCLxrE3UiEqZuLVzNPHPJHdzlz8CQO77AuH2Y2wPzLTR9T5//yaHQcP/kvY7marcBcrG0s6CfO4jX1fhV4QN1JJGosYRTvnwrqsk4M6e4Jkhr1xqcK12cu4hfWn3gZ01AZ5SadLB5JUfOfHL5WPJ/Qn/gMT8Wt93h56NHIkWAcRamuZqbOVFVWlQZo038HMWh0gPbwk9vrOP9gMRZ9YqugsK60oaIPhsUgxJl+fMPlXYxjs7I34xMAk1ac+mpDiujMYPo9Qd+GYE=
+  - secure: FTn1eWELNAp7X7clSp7hUSVxvBO1gESU3lRt6VmzEvvZgj8FvRcr+kkwlDCSIntkLDwcKVtNEHyjtOYGh8bSjYzKpNnvp2mui5SpF7z1/8F2U+/NUdx77S753Mj8ukuW+O3ahgodvJ3somO/BhFq5immuoR6yfWpbuWCAmn+RP0CvoQcINLOxLQ8RDxCWa1UvZESg+arHa7TVwGm7nwwA4rPjUauJw176fKI3MyQTe/0VCQk/OGra0zefFvwx62qlNJrh9jPKpQROLse8zLAcNpB9oCPL2oYCZRMd1WYG3lOflsELpean3Cn3o1Pwz8q/O+KCXAOLEJICmVwYo+lgTyEWl4KSfiEey5kf2pwMm4m+WZFnETaYuNI86erla3F3q/vM7Q531E9Go2JIptky8BYngtMfX4G0tAjVdi+S91Uoa0kg2vS6NTEPlNioZMzR5DwBW+DdpTG9EyMLQA3LoAnojNMWkBKNZxE2th6Xk/4VLSROmj0CftVUDs5TXII53BTZ6YiaB7uiPfueCVedY3QKSxUyLo73eF0KDnZOD2qoo6+1yng17aC1v0L5Gx68uko51cpp75tNSr6C0SMrzC67P8lrzimy9aBCPf7SGV2HNG6Hv+10foWQ22vf1EUlAl9lHVbFSIXDYMegr6l0oFfZLVDBN/8r8OTzVYkSJE=
