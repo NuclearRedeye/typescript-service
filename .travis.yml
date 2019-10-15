@@ -18,11 +18,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script:
-    - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD 
-    - docker build -t joelsummerfield/experiment.typescript-service .
-    - docker tag joelsummerfield/experiment.typescript-service joelsummerfield/experiment.typescript-service:${TRAVIS_TAG#?}
-    - docker push joelsummerfield/experiment.typescript-service
+  script: make publish
   on:
     branch: master
     tags: true
