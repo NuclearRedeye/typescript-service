@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.11](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.10...v1.2.11) (2019-10-15)
+
+
+### Bug Fixes
+
+* password for docker deploy incorrect ([9b6b154](https://github.com/joelsummerfield/experiment.typescript-service/commit/9b6b15422ce2dab2adf55526b585870b9021ae99))
+
 ### [1.2.10](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.9...v1.2.10) (2019-10-15)
 
 ### [1.2.9](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.8...v1.2.9) (2019-10-15)
