@@ -4,6 +4,9 @@ language: node_js
 node_js:
   - "lts/*"
 
+services:
+  - docker
+
 install:
   - npm install
 
@@ -14,9 +17,12 @@ script:
 
 deploy:
   skip_cleanup: true
-  provider: npm
-  email: $NPM_EMAIL
-  api_key: $NPM_TOKEN
+  provider: script
+  script:
+    - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD 
+    - docker build -t joelsummerfield/experiment.typescript-service .
+    - docker tag joelsummerfield/experiment.typescript-service joelsummerfield/experiment.typescript-service:${TRAVIS_TAG#?}
+    - docker push joelsummerfield/experiment.typescript-service
   on:
     branch: master
     tags: true
