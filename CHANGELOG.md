@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.14](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.13...v1.2.14) (2019-10-15)
+
+
+### Bug Fixes
+
+* password defined twice in ci file ([6bfa6f5](https://github.com/joelsummerfield/experiment.typescript-service/commit/6bfa6f5f07c1c448441070e06ec12d278c61a1d1))
+
 ### [1.2.13](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.12...v1.2.13) (2019-10-15)
 
 ### [1.2.12](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.11...v1.2.12) (2019-10-15)
