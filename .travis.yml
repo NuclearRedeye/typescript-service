@@ -14,7 +14,9 @@ deploy:
   skip_cleanup: true
   provider: script
   script: >-
-    echo ${DOCKER_HUB_PASSWORD} | docker login -u ${DOCKER_HUB_USERNAME} --password-stdin && 
+    echo $DOCKER_HUB_USERNAME &&
+    echo $DOCKER_HUB_PASSWORD &&
+    echo $DOCKER_HUB_PASSWORD | docker login -u $DOCKER_HUB_USERNAME --password-stdin && 
     docker build -t joelsummerfield/experiment.typescript-service . &&
     docker tag joelsummerfield/experiment.typescript-service joelsummerfield/experiment.typescript-service:${TRAVIS_TAG#?} &&
     docker push joelsummerfield/experiment.typescript-service
