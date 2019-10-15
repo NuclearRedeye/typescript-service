@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.12](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.11...v1.2.12) (2019-10-15)
+
+
+### Bug Fixes
+
+* another attempt to get the docker credentials to work ([220c579](https://github.com/joelsummerfield/experiment.typescript-service/commit/220c57925ffdd1072f6b1fd7bf39396fea5dd2f0))
+
 ### [1.2.11](https://github.com/joelsummerfield/experiment.typescript-service/compare/v1.2.10...v1.2.11) (2019-10-15)
 
 

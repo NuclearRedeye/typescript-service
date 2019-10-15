@@ -1,6 +1,6 @@
 {
   "name": "@joelsummerfield/experiment.typescript-service",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "An experiment in how to create a service in typescript that makes use of the library experiment.",
   "main": "./dist/bin/index.js",
   "files": [
