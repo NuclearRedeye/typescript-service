@@ -1,44 +1,44 @@
-import { Add, Divide, Multiply, Subtract } from '@joelsummerfield/experiment.typescript-library';
-import bodyParser = require('body-parser');
+import { Add, Divide, Multiply, Subtract } from '@nuclearredeye/typescript-library';
+import bodyParser from 'body-parser';
 import { Application, Request, Response } from 'express';
-import express = require('express');
+import express from 'express';
 
 export const app: Application = express();
 
 app.use(bodyParser.json());
 
-app.post('/add', (req : Request, res : Response) => {
+app.post('/add', (req: Request, res: Response) => {
     const a: number = req.body.a || 0;
     const b: number = req.body.b || 0;
     const result = {
-        "result": Add(a, b)
+        result: Add(a, b),
     };
     res.status(200).json(result);
 });
 
-app.post('/subtract', (req : Request, res : Response) => {
+app.post('/subtract', (req: Request, res: Response) => {
     const a: number = req.body.a || 0;
     const b: number = req.body.b || 0;
     const result = {
-        "result": Subtract(a, b)
+        result: Subtract(a, b),
     };
     res.status(200).json(result);
 });
 
-app.post('/multiply', (req : Request, res : Response) => {
+app.post('/multiply', (req: Request, res: Response) => {
     const a: number = req.body.a || 0;
     const b: number = req.body.b || 0;
     const result = {
-        "result": Multiply(a, b)
+        result: Multiply(a, b),
     };
     res.status(200).json(result);
 });
 
-app.post('/divide', (req : Request, res : Response) => {
+app.post('/divide', (req: Request, res: Response) => {
     const a: number = req.body.a || 0;
     const b: number = req.body.b || 1;
     const result = {
-        "result": Divide(a, b)
+        result: Divide(a, b),
     };
     res.status(200).json(result);
 });

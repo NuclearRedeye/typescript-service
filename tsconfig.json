@@ -1,18 +1,13 @@
 {
     "compilerOptions": {
-        "sourceMap": true,
-        "target": "es6",
-        "module": "commonjs",
+        "target": "ES2020",
+        "module": "ESNext",
         "moduleResolution": "node",
-        "declaration": true,
         "outDir": "./dist/bin",
-        "strict": true
+        "sourceMap": true,
+        "strict": true,
+        "allowSyntheticDefaultImports": true
     },
-    "include": [
-        "src"
-    ],
-    "exclude": [
-        "node_modules",
-        "src/**/*.test.ts"
-    ]
-  }
+    "include": ["src"],
+    "exclude": ["node_modules", "src/**/*.test.ts"]
+}

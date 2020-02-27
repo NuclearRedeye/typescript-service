@@ -3,6 +3,7 @@
     "version": "1.2.18",
     "description": "A Typescript Service template that can be used as a seed for new projects.",
     "main": "./dist/bin/index.js",
+    "type": "module",
     "files": [
         "dist/bin/**/*"
     ],
