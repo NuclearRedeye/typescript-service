@@ -15,7 +15,8 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "docs": "typedoc --out ./dist/docs/ --exclude **/*.test.ts ./src/",
-    "release": "standard-version"
+    "release": "standard-version",
+    "start": "node --experimental-modules ./dist/bin/typescript-service.js"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "rollup": "^1.31.1",
+    "rollup-plugin-terser": "^5.2.0",
     "standard-version": "^7.1.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.2.1",
