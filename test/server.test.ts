@@ -1,5 +1,5 @@
 import request from 'supertest';
-import { app } from '../build/server';
+import { app } from '../src/server';
 
 describe('Post /add', () => {
   it('2 + 2 should be equal to 4', async () => {
