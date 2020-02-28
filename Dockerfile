@@ -1,11 +1,11 @@
-FROM node:10 as build
+FROM node:lts-alpine as build
 
 WORKDIR /app
 COPY ./package.json ./dist/bin/* ./
 RUN npm install --production
 
-FROM node:10-alpine
-COPY --from=build /app /
+FROM node:lts-alpine
+COPY --from=build /app /app
 EXPOSE 8080
 
-CMD ["node", "index.js"]
+CMD ["node", "--experimental-modules", "/app/typescript-service.min.js"]
