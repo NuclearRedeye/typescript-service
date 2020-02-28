@@ -1,7 +1,14 @@
-import * as server from './server';
+import { Server } from 'http';
+import { app } from './server';
 const port = 8080;
 
-server.app.listen(port, () => {
+const server: Server = app.listen(port, () => {
   // tslint:disable-next-line:no-console
   console.log(`server started at http://localhost:${port}`);
+
+  process.on('SIGINT', function() {
+    server.close(function() {
+      process.exit(0);
+    });
+  });
 });
