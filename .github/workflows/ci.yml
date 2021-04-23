@@ -1,36 +1,35 @@
-name: CI
+name: Continuous Integration
 
-# Trigger on push
-on: push
+on:
+  push:
+    branches:
+      - master
+    tags:        
+      - v*
+  pull_request:
 
 jobs:
-  ci:
-    runs-on: ubuntu-18.04
+  cd:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - name: Setup
+      - name: Checking code for styling issues
         run: |
-          npm install
-      - name: Format
+          make format
+      - name: Checking code for linting issues
         run: |
-          npm run format
-      - name: Lint
+          make lint
+      - name: Checking unit tests pass
         run: |
-          npm run lint
-      - name: Build
+          make test
+      - name: Checking 'debug' code builds
         run: |
-          npm run build
-      - name: Test
+          sudo make debug
+      - name: Checking 'release' code builds
         run: |
-          npm run test
-      # Only publish for a tagged release that starts with a lower
-      - name: Publish
-        if: startsWith(github.ref, 'refs/tags/v')
+          sudo make release
+      - name: Checking 'container' builds
         run: |
-          echo "Nothing to do for step 'publish'"
+          docker build --no-cache -t $REPO_NAME .
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          REPO_NAME: ${{ github.event.repository.name }}
