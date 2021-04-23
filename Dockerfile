@@ -4,7 +4,7 @@ WORKDIR /typescript-service
 COPY ./package.json ./out/release/* ./
 RUN npm install --production
 
-FROM node:lts-alpine
+FROM node:fermium-alpine
 COPY --from=build /typescript-service /typescript-service
 EXPOSE 8080
 
