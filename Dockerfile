@@ -1,11 +1,11 @@
-FROM node:lts-alpine as build
+FROM node:fermium-alpine as build
 
-WORKDIR /app
-COPY ./package.json ./dist/bin/* ./
+WORKDIR /typescript-service
+COPY ./package.json ./out/release/* ./
 RUN npm install --production
 
-FROM node:lts-alpine
-COPY --from=build /app /app
+FROM node:fermium-alpine
+COPY --from=build /typescript-service /typescript-service
 EXPOSE 8080
 
-CMD ["node", "--experimental-modules", "/app/typescript-service.min.js"]
+CMD ["node", "/typescript-service/index.js"]
