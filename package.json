@@ -6,15 +6,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuclearredeye/experiment.typescript-service.git"
+    "url": "git+https://github.com/NuclearRedeye/typescript-service.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "NuclearRedeye",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nuclearredeye/experiment.typescript-service/issues"
-  },
-  "homepage": "https://github.com/nuclearredeye/experiment.typescript-service#readme",
+  "homepage": "https://github.com/NuclearRedeye/typescript-service#readme",
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.22",
